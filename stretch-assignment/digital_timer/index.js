@@ -4,6 +4,8 @@ const ones = digits.querySelector('#secondOnes');
 const tenths = digits.querySelector('#msTens');
 const hundredths = digits.querySelector('#msHundreds');
 const button = document.querySelector('.button');
+const resetButton = document.querySelector('.button.reset');
+let timer; let flashTimer;
 
 function flashRed() {
     digits.classList.toggle('redDigit');
@@ -29,13 +31,25 @@ function increment() {
         tens.textContent = '1';
         clearInterval(timer);
         flashRed();
-        setInterval(flashRed, 300);
-        button.classList.remove('disabled');
+        flashTimer = setInterval(flashRed, 300);
+        resetButton.classList.remove('disabled');
     }
 }
 
-let timer;
 button.addEventListener('click', () => {
+    event.stopPropagation();
     timer = window.setInterval(increment, 10);
     button.classList.add('disabled');
-})
+});
+
+resetButton.addEventListener('click', () => {
+    tens.textContent = '-';
+    ones.textContent = '-';
+    tenths.textContent = '-';
+    hundredths.textContent = '-';
+
+    resetButton.classList.add('disabled');
+    button.classList.remove('disabled');
+    clearInterval(flashTimer);
+    digits.classList.remove('redDigit')
+});

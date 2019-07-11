@@ -37,3 +37,7 @@ body {
 .button.disabled {
   display: none;
 }
+
+.button.reset {
+  background: red;
+}
