@@ -116,3 +116,8 @@ function toggleImg() {
 }
 
 ctaBtn.setAttribute('onClick', 'toggleImg()');
+
+let subHeaders = document.querySelectorAll('h4');
+subHeaders.forEach(header => {
+  header.style.fontSize = "1.6rem";
+});
