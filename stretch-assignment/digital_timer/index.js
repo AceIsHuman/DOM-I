@@ -3,6 +3,7 @@ const tens = digits.querySelector('#secondTens');
 const ones = digits.querySelector('#secondOnes');
 const tenths = digits.querySelector('#msTens');
 const hundredths = digits.querySelector('#msHundreds');
+const button = document.querySelector('.button');
 
 function flashRed() {
     digits.classList.toggle('redDigit');
@@ -32,4 +33,7 @@ function increment() {
     }
 }
 
-let timer = window.setInterval(increment, 10);
+let timer;
+button.addEventListener('click', () => {
+    timer = window.setInterval(increment, 10);
+})
