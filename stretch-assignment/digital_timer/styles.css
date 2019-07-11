@@ -16,10 +16,11 @@ body {
 }
 
 .button {
+  position: absolute;
+  top: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
   font-size: 2rem;
   width: 10rem;
   height: 3rem;
@@ -31,4 +32,8 @@ body {
 
 .button:hover {
   background: gray;
+}
+
+.button.disabled {
+  display: none;
 }

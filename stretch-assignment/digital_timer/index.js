@@ -30,10 +30,12 @@ function increment() {
         clearInterval(timer);
         flashRed();
         setInterval(flashRed, 300);
+        button.classList.remove('disabled');
     }
 }
 
 let timer;
 button.addEventListener('click', () => {
     timer = window.setInterval(increment, 10);
+    button.classList.add('disabled');
 })
