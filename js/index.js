@@ -95,7 +95,9 @@ footer.textContent = siteContent['footer']['copyright'];
 let newNavItem1 = document.createElement('a');
 let newNavItem2 = document.createElement('a');
 newNavItem1.textContent = 'Home';
+newNavItem1.setAttribute("href", "#");
 newNavItem2.textContent = 'Gallery';
+newNavItem2.setAttribute("href", "#");
 let navBar = document.querySelector('nav');
 
 navBar.prepend(newNavItem1);
